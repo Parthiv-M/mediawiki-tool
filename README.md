@@ -3,7 +3,7 @@
 This is a tool created to search and compile any featured text from [this portal](https://en.wikisource.org/wiki/Category:Featured_texts) on the WikiSource website. 
 
 ## Tech Stack
-The user interface was built in ReactJS and the backend server was made with NodeJS. 
+The user interface was built in ReactJS and the backend server was made with NodeJS. The frontend code can be found [here](https://github.com/Parthiv-M/mediawiki-tool/tree/master/client) and the server code resides [here](https://github.com/Parthiv-M/mediawiki-tool/tree/master/server)
 
 ## External Libraries Used
 - [`axios`](https://www.npmjs.com/package/axios): Was used to make requests to the server and the WikiMedia API
@@ -11,7 +11,7 @@ The user interface was built in ReactJS and the backend server was made with Nod
 
 ## How it Works
 - It takes the title of the work from the user.
-- The frontend makes a `GET` request to the server where the server queries the WikiMedia API to fetch the page of the relevant work, if it exists.
+- The frontend makes a `GET` request to the server (on the `/api/getchapters/:title` route) where the server queries the WikiMedia API to fetch the page of the relevant work, if it exists.
 - Any given work may contain multiple chapters or pages. 
 - JSDOM is used to parse the HTML returned from the WikiMedia API and extract the relevant page titles corresponding to the subsequent chapters.
 - The same process is continued till the HTML of all chapters are obtained, page-wise. 
