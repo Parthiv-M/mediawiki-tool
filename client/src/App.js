@@ -5,6 +5,7 @@ const App = () => {
 
   const [title, setTitle] = useState("");
   const [loading, setLoading] = useState(false);
+  const [dataObtained, setDataObtained] = useState(false);
 
   // function to query the API to get combined chapters
   const getChapterData = async () => {
@@ -12,6 +13,8 @@ const App = () => {
     document.querySelector(".display-html").innerHTML = "";
     if (title === "") {
       alert("Please enter a title");
+      setLoading(false);
+      setDataObtained(false);
       return;
     }
     try {
@@ -20,6 +23,7 @@ const App = () => {
         // get the new combined html document
         setLoading(false);
         document.querySelector(".display-html").innerHTML = resp.data;
+        setDataObtained(true);
       }
     } catch (error) {
       setLoading(false);
@@ -36,7 +40,7 @@ const App = () => {
         </div>
       </div>
       {loading && <p className="loading">Loading all chapters...</p>}
-      <div className="display-html"></div>
+      <div className="display-html" style={{border: `${dataObtained ? "1px solid gray" : ""}`}}></div>
     </div>
   );
 }
