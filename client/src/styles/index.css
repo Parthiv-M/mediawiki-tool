@@ -1,0 +1,73 @@
+html {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper {
+    min-height: 100vh;
+}
+
+.user-input h3 {
+    color: lightgray;
+    padding: 0 1rem;
+}
+
+.user-input {
+    min-height: 30vh;
+    width: 100%;
+    background: rgb(18, 18, 18);
+    background: linear-gradient(241deg, rgba(18, 18, 18, 1) 0%, rgba(73, 0, 0, 1) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-area {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.input-area input {
+    width: 20%;
+    padding: 10px;
+    outline: none;
+    border: none;
+}
+
+.input-area button {
+    background-color: rgb(255, 224, 217);
+    padding: 10px 10px;
+    border: none;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    font-weight: bold;
+}
+
+.input-area button:hover {
+    cursor: pointer;
+    background-color: rgb(255, 160, 160);
+}
+
+.loading {
+    text-align: center;
+    padding-top: 3rem;
+    font-weight: bold;
+}
+
+.display-html {
+    position: relative;
+    display: flex;
+    flex-flow: column wrap;
+    margin: 3rem;
+    padding: 1rem;
+    border: 1px solid gray;
+}
